@@ -69,5 +69,8 @@ dependencies {
     implementation 'com.github.stephanenicolas.toothpick:smoothie:3.1.0'
     annotationProcessor 'com.github.stephanenicolas.toothpick:toothpick-compiler:3.1.0'
 
+    // Написать приложение для кадрового агенства, которое умеет
+    //получать информацию о соискателях и компаниях.
+
     }
 }
