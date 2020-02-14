@@ -1,12 +1,15 @@
 package com.example.domain.service;
 
+import com.example.domain.ApiUtils;
+import com.example.domain.model.vacancie.Vacancie;
 import com.example.domain.repository.VacanciesRepository;
 
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
-import VacanciesService;
+
 import io.reactivex.Single;
 
 public class VacanciesServiceImpl implements VacanciesService {

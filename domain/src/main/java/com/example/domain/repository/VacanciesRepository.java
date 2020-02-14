@@ -1,6 +1,10 @@
 package com.example.domain.repository;
 
+import com.example.domain.model.vacancie.Vacancie;
+
 import java.util.List;
+
+import io.reactivex.Single;
 
 public interface VacanciesRepository {
 

@@ -18,5 +18,5 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:1.0.0"
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
