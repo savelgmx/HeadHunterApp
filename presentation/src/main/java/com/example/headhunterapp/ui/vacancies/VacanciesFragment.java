@@ -7,7 +7,7 @@ import javax.inject.Inject;
 public class VacanciesFragment extends Fragment {
 
     @Inject
-    VacanciesViewModel = mVacanciesViewModel;
+    VacanciesViewModel mVacanciesViewModel;
 
 
     public static VacanciesFragment newInstance() {
