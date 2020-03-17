@@ -15,7 +15,7 @@ public interface HeadHunterApi {
     // библиотека для работы с OAuth — ScribeJava
 
     @GET("/vacancies/")
-    Single<VacanciesResponse> getVacancies(@Query("q") String query);
+    Single<VacanciesResponse> getVacancies(@Path("text") String vacancie_text);
 
     @GET("vacancies/{vacancy_id}")
     Single<VacanciesWithIdResponse> getVacanciesWithId(@Path("vacancie_id") String vacancie_id);

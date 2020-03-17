@@ -17,7 +17,7 @@ public class ApiKeyInterceptor implements Interceptor {
     public Response intercept(@NonNull Chain chain) throws IOException {
         Request request = chain.request();
         HttpUrl httpUrl = request.url().newBuilder()
-                .addQueryParameter("client_id", BuildConfig.API_KEY)
+                .addPathSegment("text")
                 .build();
         request = request.newBuilder().url(httpUrl).build();
 
