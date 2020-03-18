@@ -1,6 +1,8 @@
 package com.example.headhunterapp.ui.vacancies;
 
-import androidx.fragment.app.Fragment;
+
+
+import android.support.v4.app.Fragment;
 
 import javax.inject.Inject;
 

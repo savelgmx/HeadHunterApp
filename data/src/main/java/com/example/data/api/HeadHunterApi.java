@@ -14,10 +14,15 @@ public interface HeadHunterApi {
     //но если понадобится то вот https://habr.com/ru/company/hh/blog/278957/
     // библиотека для работы с OAuth — ScribeJava
 
-    @GET("/vacancies/")
+    //описание HeadHunter API здесь https://speca.io/speca/headhunter-api
+    //и здесь https://github.com/hhru/api
+    //GET /vacancies
+    //Поиск по вакансиям
+    @GET("/vacancies")
     Single<VacanciesResponse> getVacancies(@Path("text") String vacancie_text);
-
+   // GET /vacancies/{vacancy_id}
+   // возвращает подробную информацию по указанной вакансии.
     @GET("vacancies/{vacancy_id}")
-    Single<VacanciesWithIdResponse> getVacanciesWithId(@Path("vacancie_id") String vacancie_id);
+    Single<VacanciesWithIdResponse> getVacanciesWithId(@Path("vacancy_id") String vacancie_id);
 
 }

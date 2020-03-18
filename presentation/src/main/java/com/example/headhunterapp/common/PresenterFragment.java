@@ -1,7 +1,7 @@
 package com.example.headhunterapp.common;
 
 
-import androidx.fragment.app.Fragment;
+import android.support.v4.app.Fragment;
 
 public abstract class PresenterFragment<P extends BasePresenter> extends Fragment {
 
