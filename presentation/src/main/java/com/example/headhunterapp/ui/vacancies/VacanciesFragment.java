@@ -17,7 +17,7 @@ import com.example.headhunterapp.R;
 import javax.inject.Inject;
 
 import toothpick.Toothpick;
-
+//TODO binding error
 public class VacanciesFragment extends Fragment {
 
     @Inject

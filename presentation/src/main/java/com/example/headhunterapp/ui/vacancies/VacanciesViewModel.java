@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.ListCompositeDisposable;
-
+//TODO write loadVacancies method
 public class VacanciesViewModel {
 
     private Disposable mDisposable;
@@ -19,5 +19,6 @@ public class VacanciesViewModel {
     }
 
 
-
+    public void loadVacancies() {
+    }
 }
