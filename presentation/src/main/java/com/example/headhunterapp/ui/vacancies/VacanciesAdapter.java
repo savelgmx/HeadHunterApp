@@ -24,4 +24,7 @@ public class VacanciesAdapter extends RecyclerView.Adapter<VacanciesHolder> {
     public int getItemCount() {
         return 0;
     }
+
+    public interface OnItemClickListener {
+    }
 }

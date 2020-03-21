@@ -2,12 +2,11 @@ package com.example.headhunterapp;
 
 import android.app.Application;
 
-//import com.elegion.test.behancer.di.AppComponent;
-import com.elegion.test.behancer.di.AppModule;
-//import com.elegion.test.behancer.di.DaggerAppComponent;
-import com.elegion.test.behancer.di.NetworkModule;
-import com.elegion.test.behancer.di.RepositoryModule;
-import com.elegion.test.behancer.di.ServiceModule;
+
+import com.example.headhunterapp.di.AppModule;
+import com.example.headhunterapp.di.NetworkModule;
+import com.example.headhunterapp.di.RepositoryModule;
+import com.example.headhunterapp.di.ServiceModule;
 
 import toothpick.Scope;
 import toothpick.Toothpick;

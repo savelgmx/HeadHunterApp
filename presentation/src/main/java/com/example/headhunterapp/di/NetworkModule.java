@@ -1,6 +1,7 @@
 package com.example.headhunterapp.di;
 
 
+import com.example.headhunterapp.BuildConfig;
 import com.example.data.api.ApiKeyInterceptor;
 import com.example.data.api.HeadHunterApi;
 import com.google.gson.Gson;
@@ -11,11 +12,6 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import toothpick.config.Module;
-
-/**
- * Created by tanchuev on 23.04.2018.
- */
-
 
 public class NetworkModule extends Module  {
     private final Gson mGson = provideGson();
@@ -45,7 +41,7 @@ public class NetworkModule extends Module  {
 
     Retrofit provideRetrofit() {
         return new Retrofit.Builder()
-                .baseUrl(com.elegion.data.BuildConfig.API_URL)
+                .baseUrl(com.example.data.BuildConfig.API_URL)
                 // need for interceptors
                 .client(mOkHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(mGson))

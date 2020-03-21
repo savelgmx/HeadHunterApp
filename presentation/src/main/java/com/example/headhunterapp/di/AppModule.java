@@ -1,19 +1,7 @@
 package com.example.headhunterapp.di;
 
-import android.arch.persistence.room.Room;
-
-
 import com.example.headhunterapp.AppDelegate;
-
-import javax.inject.Inject;
-
 import toothpick.config.Module;
-
-
-/**
- * Created by tanchuev on 23.04.2018.
- */
-
 
 public class AppModule extends Module {
 /*
