@@ -26,18 +26,18 @@ public class AppModule extends Module {
     }
 
  /*   Storage provideStorage() {
-        final BehanceDatabase database = Room.databaseBuilder(mApp, BehanceDatabase.class, "behance_database")
+        final BehanceDatabase com.example.data.database = Room.databaseBuilder(mApp, BehanceDatabase.class, "behance_database")
                 .fallbackToDestructiveMigration()
                 .build();
 
-        return new Storage(database.getBehanceDao());
+        return new Storage(com.example.data.database.getBehanceDao());
     }
     BehanceDao provideDao() {
-        final BehanceDatabase database = Room.databaseBuilder(mApp, BehanceDatabase.class, "behance_database")
+        final BehanceDatabase com.example.data.database = Room.databaseBuilder(mApp, BehanceDatabase.class, "behance_database")
                 .fallbackToDestructiveMigration()
                 .build();
 
-        return database.getBehanceDao();
+        return com.example.data.database.getBehanceDao();
 
     }
 */
