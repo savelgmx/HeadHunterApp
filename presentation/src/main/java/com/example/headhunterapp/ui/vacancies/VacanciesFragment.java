@@ -22,6 +22,7 @@ public class VacanciesFragment extends Fragment {
 
     @Inject
     VacanciesViewModel mVacanciesViewModel;
+    private VacanciesAdapter.OnItemClickListener mOnItemClickListener;
 
 
     public static VacanciesFragment newInstance() {
@@ -33,7 +34,7 @@ public class VacanciesFragment extends Fragment {
 
         Toothpick.inject(this, AppDelegate.getAppScope());
 
- //       mVacanciesViewModel.setOnItemClickListener(mOnItemClickListener);
+        mVacanciesViewModel.setOnItemClickListener(mOnItemClickListener);
     }
 
     @Nullable

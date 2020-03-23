@@ -33,7 +33,7 @@
                 android:layout_height="match_parent"
                 android:visibility="@{vm.isErrorVisible ? V.GONE : V.VISIBLE}"
                 bind:clickHandler="@{vm.onItemClickListener}"
-                bind:data="@{vm.projects}" />
+                bind:data="@{vm.vacancies}" />
 
             <LinearLayout
                 android:layout_width="match_parent"
