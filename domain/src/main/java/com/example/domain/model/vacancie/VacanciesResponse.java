@@ -8,4 +8,10 @@ public class VacanciesResponse implements Serializable {
     public List<Vacancie> getVacancies() {
         return null;
     }
+
+    public void setVacancies(List<Vacancie> vacancies) {
+
+
+
+    }
 }
