@@ -13,11 +13,12 @@ import android.view.ViewGroup;
 
 import com.example.headhunterapp.AppDelegate;
 import com.example.headhunterapp.R;
+import com.example.headhunterapp.databinding.VacanciesBinding;
 
 import javax.inject.Inject;
 
 import toothpick.Toothpick;
-//TODO binding error
+
 public class VacanciesFragment extends Fragment {
 
     @Inject

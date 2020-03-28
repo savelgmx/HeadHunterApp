@@ -28,6 +28,8 @@ public class VacanciesAdapter extends RecyclerView.Adapter<VacanciesHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull VacanciesHolder holder, int position) {
+        Vacancie vacancie = mVacansies.get(position);
+        holder.bind(vacancie, mOnItemClickListener);
 
     }
 

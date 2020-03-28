@@ -7,13 +7,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 
 import com.example.domain.model.vacancie.Vacancie;
 import com.example.domain.service.VacanciesService;
-
 import javax.inject.Inject;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.internal.disposables.ListCompositeDisposable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 
 //TODO write loadVacancies method
 public class VacanciesViewModel {

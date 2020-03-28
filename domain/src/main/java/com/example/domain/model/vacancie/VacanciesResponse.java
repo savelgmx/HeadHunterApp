@@ -6,6 +6,7 @@ import java.util.List;
 public class VacanciesResponse implements Serializable {
 
     public List<Vacancie> getVacancies() {
+        //TODO fill it
         return null;
     }
 
