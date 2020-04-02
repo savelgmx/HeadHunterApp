@@ -15,10 +15,6 @@ import toothpick.config.Module;
 public class AppModule extends Module {
     @Inject
     HeadHunterDao mHeadHunterDao;
-/*
-    @Inject
-    BehanceDao mBehanceDao;
-*/
 
     private final AppDelegate mApp;
 
@@ -50,20 +46,4 @@ public class AppModule extends Module {
         return mApp;
     }
 
- /*   Storage provideStorage() {
-        final BehanceDatabase com.example.data.database = Room.databaseBuilder(mApp, BehanceDatabase.class, "behance_database")
-                .fallbackToDestructiveMigration()
-                .build();
-
-        return new Storage(com.example.data.database.getBehanceDao());
-    }
-    BehanceDao provideDao() {
-        final BehanceDatabase com.example.data.database = Room.databaseBuilder(mApp, BehanceDatabase.class, "behance_database")
-                .fallbackToDestructiveMigration()
-                .build();
-
-        return com.example.data.database.getBehanceDao();
-
-    }
-*/
 }

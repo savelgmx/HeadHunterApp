@@ -1,6 +1,7 @@
 package com.example.domain.service;
 
 import com.example.domain.ApiUtils;
+
 import com.example.domain.model.vacancie.Vacancie;
 import com.example.domain.repository.VacanciesRepository;
 

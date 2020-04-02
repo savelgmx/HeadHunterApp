@@ -1,6 +1,6 @@
 package com.example.data.repository;
 
-import com.example.data.api.HeadHunterApi;
+
 import com.example.domain.model.vacancie.Vacancie;
 import com.example.domain.repository.VacanciesRepository;
 import com.example.data.database.HeadHunterDao;

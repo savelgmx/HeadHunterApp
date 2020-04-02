@@ -1,5 +1,7 @@
 package com.example.domain.service;
 
+
+
 import com.example.domain.model.vacancie.Vacancie;
 
 import java.util.List;

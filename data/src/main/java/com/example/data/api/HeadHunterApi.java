@@ -1,12 +1,13 @@
 package com.example.data.api;
 
+
+
 import com.example.domain.model.vacancie.VacanciesResponse;
 import com.example.domain.model.vacancie.VacanciesWithIdResponse;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public interface HeadHunterApi {
 

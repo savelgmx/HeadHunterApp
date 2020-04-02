@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 
 
-import com.example.domain.model.vacancie.Vacancie;
+import com.example.domain.Vacancie;
 import com.example.headhunterapp.ui.vacancies.VacanciesAdapter;
 import com.squareup.picasso.Picasso;
 

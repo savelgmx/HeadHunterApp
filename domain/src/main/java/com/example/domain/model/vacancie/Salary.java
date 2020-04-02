@@ -11,7 +11,7 @@ import com.google.gson.annotations.SerializedName;
 @Entity
         (foreignKeys = @ForeignKey(
                 entity = Vacancie.class,
-                parentColumns = "id",
+                parentColumns = "db_id",
                 childColumns = "vacancie_id"
         ))
 
@@ -21,7 +21,7 @@ public class Salary implements Serializable
     @PrimaryKey
     @ColumnInfo(name = "id")
     @SerializedName("id")
-    private String mId;
+    private int mId;
     @ColumnInfo(name="from")
     @SerializedName("from")
     private String mFrom;
@@ -31,6 +31,9 @@ public class Salary implements Serializable
     private String mCurrency;
     @SerializedName("gross")
     private String mGross;
+
+    @ColumnInfo(name = "vacancie_id")
+    private int mVacancieId;
 
     public String getFrom() {  return mFrom; }
     public void setFrom(String from) {mFrom = from; }
@@ -56,4 +59,9 @@ public class Salary implements Serializable
             mGross = gross;
     }
 
+    public void setId(int i) {
+    }
+
+    public void setVacancieId(String id) {
+    }
 }

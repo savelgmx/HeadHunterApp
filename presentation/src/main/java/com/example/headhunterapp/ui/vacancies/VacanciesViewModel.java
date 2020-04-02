@@ -8,9 +8,11 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import com.example.domain.model.vacancie.Vacancie;
 import com.example.domain.service.VacanciesService;
 import javax.inject.Inject;
-import io.reactivex.disposables.Disposable;
 
-//TODO write loadVacancies method
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+
 public class VacanciesViewModel {
 
     @Inject
@@ -32,6 +34,19 @@ public class VacanciesViewModel {
     public void loadVacancies() {
         //здесь добавляем код для загрузки
         // списка вакансий с удаленного сервера
+        mDisposable = mService.getVacancies()
+                .doOnSuccess(response -> mService.insertVacancies(response))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(disposable -> mIsLoading.set(true))
+                .doFinally(() -> mIsLoading.set(false))
+                .subscribe(
+                        response -> {
+                            mIsErrorVisible.set(false);
+                            mProjects.addAll(response);
+                        },
+                        throwable -> mIsErrorVisible.set(true));
+
     }
 
     public void dispatchDetach() {

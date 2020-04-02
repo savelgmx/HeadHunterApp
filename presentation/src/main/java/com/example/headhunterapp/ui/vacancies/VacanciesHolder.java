@@ -1,8 +1,6 @@
 package com.example.headhunterapp.ui.vacancies;
 
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.example.domain.model.vacancie.Vacancie;
 import com.example.headhunterapp.databinding.VacanciesBinding;

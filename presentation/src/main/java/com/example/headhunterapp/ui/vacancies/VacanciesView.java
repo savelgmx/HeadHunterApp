@@ -1,6 +1,6 @@
 package com.example.headhunterapp.ui.vacancies;
 
-import com.example.domain.model.vacancie.Vacancie;
+import com.example.domain.Vacancie;
 import com.example.headhunterapp.common.BaseView;
 
 import java.util.List;

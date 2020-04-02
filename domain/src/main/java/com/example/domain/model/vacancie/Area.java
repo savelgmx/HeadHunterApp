@@ -1,24 +1,33 @@
 package com.example.domain.model.vacancie;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.PrimaryKey;
+
 import java.io.Serializable;
 import com.google.gson.annotations.SerializedName;
 @Entity
         (foreignKeys = @ForeignKey(
                 entity = Vacancie.class,
-                parentColumns = "id",
+                parentColumns = "db_id",
                 childColumns = "vacancie_id"
         ))
 
 public class Area implements Serializable {
     //район работы в отдельном классе Area список из "id","name","url"
+        @PrimaryKey
         @SerializedName("id")
         private String id;
         @SerializedName("name")
         private String name;
         @SerializedName("url")
         private String url;
+
+
+    @ColumnInfo(name = "vacancie_id")
+    private int mVacancieId;
+
 
         public String getId() {
             return id;
@@ -59,5 +68,7 @@ public class Area implements Serializable {
             return this;
         }
 
+    public void setVacancieId(String id) {
+    }
 }
 

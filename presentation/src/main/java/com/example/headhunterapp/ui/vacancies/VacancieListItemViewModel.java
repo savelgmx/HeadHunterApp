@@ -1,6 +1,5 @@
 package com.example.headhunterapp.ui.vacancies;
 
-import android.text.format.DateUtils;
 
 import com.example.domain.model.vacancie.Vacancie;
 
@@ -13,10 +12,10 @@ public class VacancieListItemViewModel {
     private String mPublishedOn;
 
     public VacancieListItemViewModel(Vacancie vacancie) {
-        mImageUrl = null;//vacancie.getCover().getPhotoUrl();
+        mImageUrl = null;//com.example.domain.model.vacancie.getCover().getPhotoUrl();
         mName = vacancie.getName();
-        mUsername = null; //vacancie.getOwners().get(FIRST_OWNER_INDEX).getUsername();
-        mPublishedOn = null;//DateUtils.format(vacancie.getPublishedOn());
+        mUsername = null; //com.example.domain.model.vacancie.getOwners().get(FIRST_OWNER_INDEX).getUsername();
+        mPublishedOn = null;//DateUtils.format(com.example.domain.model.vacancie.getPublishedOn());
 
     }
 

@@ -3,6 +3,7 @@ package com.example.data.repository;
 
 import com.example.data.BuildConfig;
 import com.example.data.api.HeadHunterApi;
+
 import com.example.domain.model.vacancie.Vacancie;
 import com.example.domain.model.vacancie.VacanciesResponse;
 import com.example.domain.repository.VacanciesRepository;
@@ -26,7 +27,7 @@ public class VacanciesServerRepository implements VacanciesRepository {
 
     @Override
     public Single<List<Vacancie>> getVacancies() {
-        //return null;
+
         return mApi.getVacancies(BuildConfig.API_URL).map(new Function<VacanciesResponse,
                        List<Vacancie>>(){
             @Override
