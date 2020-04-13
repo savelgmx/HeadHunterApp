@@ -40,6 +40,7 @@ public class Vacancie implements Serializable {
     @SerializedName("salary")
     @Ignore
     private List<Salary> mSalary;//зарплата
+    private Area area;
 
     @SerializedName("address")
     @Ignore
@@ -74,10 +75,6 @@ public class Vacancie implements Serializable {
         return mArea;
     }
 
-    public void setArea(@NonNull List<Area>area) {
-        mArea =  area;
-    }
-
     public List<Salary> getSalary() {
         return mSalary;
     }
@@ -86,4 +83,7 @@ public class Vacancie implements Serializable {
         mSalary = salary;
     }
 
+    public void setArea(Area area) {
+        this.area = area;
+    }
 }

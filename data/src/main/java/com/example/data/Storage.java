@@ -1,76 +1,75 @@
-package com.example.data;
+    package com.example.data;
 
 
-import android.support.v4.util.Pair;
-import com.example.data.database.HeadHunterDao;
-import com.example.domain.model.vacancie.Area;
-import com.example.domain.model.vacancie.Salary;
-import com.example.domain.model.vacancie.Vacancie;
-import com.example.domain.model.vacancie.VacanciesResponse;
+    import android.support.v4.util.Pair;
+    import com.example.data.database.HeadHunterDao;
+    import com.example.domain.model.vacancie.Area;
+    import com.example.domain.model.vacancie.Salary;
+    import com.example.domain.model.vacancie.Vacancie;
+    import com.example.domain.model.vacancie.VacanciesResponse;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
-public class Storage {
-
-//TODO area salary fill in getVacancies()
-
-    private HeadHunterDao mHeadHunterDao;
-
-    public Storage(HeadHunterDao headHunterDao) {
-        mHeadHunterDao = headHunterDao;
-    }
+    import java.util.ArrayList;
+    import java.util.List;
 
 
+    public class Storage {
 
 
-    public void insertVacancies(VacanciesResponse response) {
-        List<Vacancie> vacancies = response.getVacancies();
-        mHeadHunterDao.insertVacancies(vacancies);
+        private HeadHunterDao mHeadHunterDao;
 
-        Pair<List<Area>,List<Salary>> assembled = assemble(vacancies);
-        mHeadHunterDao.clearAreaTable();
-        mHeadHunterDao.insertArea();
-        mHeadHunterDao.clearSalaryTable();
-        mHeadHunterDao.insertSalary();
-
-    }
-
-    private Pair<List<Area>, List<Salary>> assemble(List<Vacancie> vacancies) {
-
-        List<Area> areas = new ArrayList<>();
-        List<Salary> salaries = new ArrayList<>();
-        for (int i = 0; i < vacancies.size(); i++) {
-            Area area = (Area) vacancies.get(i).getArea();
-            area.setId(String.valueOf(i));
-            area.setVacancieId(vacancies.get(i).getId());
-            areas.add(area);
-
-            Salary salary = vacancies.get(i).getSalary().get(0);
-            salary.setId(i);
-            salary.setVacancieId(vacancies.get(i).getId());
-            salaries.add(salary);
+        public Storage(HeadHunterDao headHunterDao) {
+            mHeadHunterDao = headHunterDao;
         }
-        return new Pair<>(areas, salaries);
 
 
+        public void insertVacancies(VacanciesResponse response) {
+            List<Vacancie> vacancies = response.getVacancies();
+            mHeadHunterDao.insertVacancies(vacancies);
 
-    }
-
-
-    public VacanciesResponse getVacancies() {
-        List<Vacancie> vacancies = mHeadHunterDao.getVacancies();
-        for (Vacancie vacancie : vacancies) {
-            //здесь в цикле должнв заполняться таблицы для Area и Salary
+            Pair<List<Area>,List<Salary>> assembled = assemble(vacancies);
+            mHeadHunterDao.clearAreaTable();
+            mHeadHunterDao.insertArea(assembled.first);
+            mHeadHunterDao.clearSalaryTable();
+            mHeadHunterDao.insertSalary(assembled.second);
 
         }
 
-        VacanciesResponse response = new VacanciesResponse();
-        response.setVacancies(vacancies);
+        private Pair<List<Area>, List<Salary>> assemble(List<Vacancie> vacancies) {
 
-        return response;
+            List<Area> areas = new ArrayList<>();
+            List<Salary> salaries = new ArrayList<>();
+            for (int i = 0; i < vacancies.size(); i++) {
+                Area area = (Area) vacancies.get(i).getArea();
+                area.setId(String.valueOf(i));
+                area.setVacancieId(vacancies.get(i).getId());
+                areas.add(area);
+
+                Salary salary = vacancies.get(i).getSalary().get(0);
+                salary.setId(i);
+                salary.setVacancieId(vacancies.get(i).getId());
+                salaries.add(salary);
+            }
+            return new Pair<>(areas, salaries);
+
+
+
+        }
+
+
+
+        public VacanciesResponse getVacancies() {
+            List<Vacancie> vacancies = mHeadHunterDao.getVacancies();
+            for (Vacancie vacancie : vacancies) {
+                //здесь в цикле должнв заполняться таблицы для Area и Salary
+                vacancie.setArea(mHeadHunterDao.getAreaFromVacancies(vacancie.getDbId()));
+                vacancie.setSalary((List<Salary>) mHeadHunterDao.getSalaryFromVacancies(vacancie.getDbId()));
+            }
+
+            VacanciesResponse response = new VacanciesResponse();
+            response.setVacancies(vacancies);
+
+            return response;
+        }
+
+
     }
-
-
-}

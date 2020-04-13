@@ -60,6 +60,7 @@ public class Salary implements Serializable
     }
 
     public void setId(int i) {
+
     }
 
     public void setVacancieId(String id) {

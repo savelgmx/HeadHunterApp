@@ -69,6 +69,11 @@ public class Area implements Serializable {
         }
 
     public void setVacancieId(String id) {
+
+            mVacancieId = Integer.valueOf(id);
+    }
+    public int getVacancieId(){
+            return mVacancieId;
     }
 }
 

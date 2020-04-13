@@ -12,6 +12,5 @@ import com.example.domain.model.vacancie.Vacancie;
 
 public abstract class HeadHunterDatabase extends RoomDatabase {
 
-
     public abstract HeadHunterDao getHeadHunterDao();
 }

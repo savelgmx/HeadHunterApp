@@ -43,7 +43,7 @@ public class VacanciesViewModel {
                 .subscribe(
                         response -> {
                             mIsErrorVisible.set(false);
-                            mProjects.addAll(response);
+                            mVacancies.addAll(response);
                         },
                         throwable -> mIsErrorVisible.set(true));
 
